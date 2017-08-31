@@ -17,7 +17,7 @@ def get_argparser():
 
 
 def log_config(config, multiprocessing=False):
-    log_file = "entry.log"
+    log_file = '.'.join(os.path.splitext(__file__)[:-1])
     log_level = config["logging"].get("level", "INFO")
     log_dir = config["logging"].get("dir", "/var/log/")
     os.makedirs(log_dir, exist_ok=True)
